@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		C0382EF32D85A2C800544C9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0382EDA2D85A2C700544C9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0382EE12D85A2C700544C9E;
+			remoteInfo = "Metal HUD Toggle";
+		};
+		C0382EFD2D85A2C800544C9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0382EDA2D85A2C700544C9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0382EE12D85A2C700544C9E;
+			remoteInfo = "Metal HUD Toggle";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C0382EE22D85A2C700544C9E /* Metal HUD Utility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metal HUD Utility.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0382EF22D85A2C800544C9E /* Metal HUD UtilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Metal HUD UtilityTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0382EFC2D85A2C800544C9E /* Metal HUD UtilityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Metal HUD UtilityUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C0D6D9CD2DDB699400E55F80 /* Exceptions for "Metal HUD Toggle" folder in "Metal HUD Utility" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Metal_HUD_ToggleUITests.swift,
+			);
+			target = C0382EE12D85A2C700544C9E /* Metal HUD Utility */;
+		};
+		C0D6D9CE2DDB699400E55F80 /* Exceptions for "Metal HUD Toggle" folder in "Metal HUD UtilityUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Metal_HUD_ToggleUITests.swift,
+			);
+			target = C0382EFB2D85A2C800544C9E /* Metal HUD UtilityUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C0382EE42D85A2C700544C9E /* Metal HUD Toggle */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C0D6D9CD2DDB699400E55F80 /* Exceptions for "Metal HUD Toggle" folder in "Metal HUD Utility" target */,
+				C0D6D9CE2DDB699400E55F80 /* Exceptions for "Metal HUD Toggle" folder in "Metal HUD UtilityUITests" target */,
+			);
+			path = "Metal HUD Toggle";
+			sourceTree = "<group>";
+		};
+		C0382EF52D85A2C800544C9E /* Metal HUD ToggleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Metal HUD ToggleTests";
+			sourceTree = "<group>";
+		};
+		C0382EFF2D85A2C800544C9E /* Metal HUD ToggleUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Metal HUD ToggleUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0382EDF2D85A2C700544C9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0382EEF2D85A2C800544C9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0382EF92D85A2C800544C9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C0382ED92D85A2C700544C9E = {
+			isa = PBXGroup;
+			children = (
+				C0382EE42D85A2C700544C9E /* Metal HUD Toggle */,
+				C0382EF52D85A2C800544C9E /* Metal HUD ToggleTests */,
+				C0382EFF2D85A2C800544C9E /* Metal HUD ToggleUITests */,
+				C0382EE32D85A2C700544C9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0382EE32D85A2C700544C9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0382EE22D85A2C700544C9E /* Metal HUD Utility.app */,
+				C0382EF22D85A2C800544C9E /* Metal HUD UtilityTests.xctest */,
+				C0382EFC2D85A2C800544C9E /* Metal HUD UtilityUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0382EE12D85A2C700544C9E /* Metal HUD Utility */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0382F062D85A2C800544C9E /* Build configuration list for PBXNativeTarget "Metal HUD Utility" */;
+			buildPhases = (
+				C0382EDE2D85A2C700544C9E /* Sources */,
+				C0382EDF2D85A2C700544C9E /* Frameworks */,
+				C0382EE02D85A2C700544C9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C0382EE42D85A2C700544C9E /* Metal HUD Toggle */,
+			);
+			name = "Metal HUD Utility";
+			packageProductDependencies = (
+			);
+			productName = "Metal HUD Toggle";
+			productReference = C0382EE22D85A2C700544C9E /* Metal HUD Utility.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C0382EF12D85A2C800544C9E /* Metal HUD UtilityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0382F092D85A2C800544C9E /* Build configuration list for PBXNativeTarget "Metal HUD UtilityTests" */;
+			buildPhases = (
+				C0382EEE2D85A2C800544C9E /* Sources */,
+				C0382EEF2D85A2C800544C9E /* Frameworks */,
+				C0382EF02D85A2C800544C9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0382EF42D85A2C800544C9E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C0382EF52D85A2C800544C9E /* Metal HUD ToggleTests */,
+			);
+			name = "Metal HUD UtilityTests";
+			packageProductDependencies = (
+			);
+			productName = "Metal HUD ToggleTests";
+			productReference = C0382EF22D85A2C800544C9E /* Metal HUD UtilityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C0382EFB2D85A2C800544C9E /* Metal HUD UtilityUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0382F0C2D85A2C800544C9E /* Build configuration list for PBXNativeTarget "Metal HUD UtilityUITests" */;
+			buildPhases = (
+				C0382EF82D85A2C800544C9E /* Sources */,
+				C0382EF92D85A2C800544C9E /* Frameworks */,
+				C0382EFA2D85A2C800544C9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0382EFE2D85A2C800544C9E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C0382EFF2D85A2C800544C9E /* Metal HUD ToggleUITests */,
+			);
+			name = "Metal HUD UtilityUITests";
+			packageProductDependencies = (
+			);
+			productName = "Metal HUD ToggleUITests";
+			productReference = C0382EFC2D85A2C800544C9E /* Metal HUD UtilityUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0382EDA2D85A2C700544C9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					C0382EE12D85A2C700544C9E = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					C0382EF12D85A2C800544C9E = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = C0382EE12D85A2C700544C9E;
+					};
+					C0382EFB2D85A2C800544C9E = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = C0382EE12D85A2C700544C9E;
+					};
+				};
+			};
+			buildConfigurationList = C0382EDD2D85A2C700544C9E /* Build configuration list for PBXProject "Metal HUD Utility" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C0382ED92D85A2C700544C9E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C0382EE32D85A2C700544C9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0382EE12D85A2C700544C9E /* Metal HUD Utility */,
+				C0382EF12D85A2C800544C9E /* Metal HUD UtilityTests */,
+				C0382EFB2D85A2C800544C9E /* Metal HUD UtilityUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0382EE02D85A2C700544C9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0382EF02D85A2C800544C9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0382EFA2D85A2C800544C9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0382EDE2D85A2C700544C9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0382EEE2D85A2C800544C9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0382EF82D85A2C800544C9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C0382EF42D85A2C800544C9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0382EE12D85A2C700544C9E /* Metal HUD Utility */;
+			targetProxy = C0382EF32D85A2C800544C9E /* PBXContainerItemProxy */;
+		};
+		C0382EFE2D85A2C800544C9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0382EE12D85A2C700544C9E /* Metal HUD Utility */;
+			targetProxy = C0382EFD2D85A2C800544C9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C0382F042D85A2C800544C9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C0382F052D85A2C800544C9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C0382F072D85A2C800544C9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Metal HUD Toggle/Preview Content\"";
+				DEVELOPMENT_TEAM = TCBWS4X9DH;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Metal HUD Utility";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.s7002.Metal-HUD-Utility";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = NO;
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "xrsimulator xros watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C0382F082D85A2C800544C9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Metal HUD Toggle/Preview Content\"";
+				DEVELOPMENT_TEAM = TCBWS4X9DH;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Metal HUD Utility";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.s7002.Metal-HUD-Utility";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = NO;
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "xrsimulator xros watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C0382F0A2D85A2C800544C9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.s7002.Metal-HUD-ToggleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metal HUD Utility.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Metal HUD Utility";
+			};
+			name = Debug;
+		};
+		C0382F0B2D85A2C800544C9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.s7002.Metal-HUD-ToggleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metal HUD Utility.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Metal HUD Utility";
+			};
+			name = Release;
+		};
+		C0382F0D2D85A2C800544C9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.s7002.Metal-HUD-ToggleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Metal HUD Toggle";
+			};
+			name = Debug;
+		};
+		C0382F0E2D85A2C800544C9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.s7002.Metal-HUD-ToggleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Metal HUD Toggle";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0382EDD2D85A2C700544C9E /* Build configuration list for PBXProject "Metal HUD Utility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0382F042D85A2C800544C9E /* Debug */,
+				C0382F052D85A2C800544C9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0382F062D85A2C800544C9E /* Build configuration list for PBXNativeTarget "Metal HUD Utility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0382F072D85A2C800544C9E /* Debug */,
+				C0382F082D85A2C800544C9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0382F092D85A2C800544C9E /* Build configuration list for PBXNativeTarget "Metal HUD UtilityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0382F0A2D85A2C800544C9E /* Debug */,
+				C0382F0B2D85A2C800544C9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0382F0C2D85A2C800544C9E /* Build configuration list for PBXNativeTarget "Metal HUD UtilityUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0382F0D2D85A2C800544C9E /* Debug */,
+				C0382F0E2D85A2C800544C9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0382EDA2D85A2C700544C9E /* Project object */;
+}
