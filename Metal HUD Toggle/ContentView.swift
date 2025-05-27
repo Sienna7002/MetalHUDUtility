@@ -180,7 +180,10 @@ struct ContentView: View {
             return view
         }
         
-        func updateNSView(_ nsView: NSVisualEffectView, context: Context) {}
+        func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
+            nsView.material = material
+            nsView.blendingMode = blendingMode
+        }
     }
     
     struct DemoViewContainer: View {
@@ -219,6 +222,7 @@ struct ContentView: View {
                         }
                     }
                     DemoView()
+                        .id(UUID())
                         .background(
                             CustomVisualEffectView(material: .windowBackground, blendingMode: .withinWindow)
                                 .cornerRadius(20)
@@ -235,7 +239,12 @@ struct ContentView: View {
                     let process = Process()
                     process.executableURL = URL(fileURLWithPath: "/bin/zsh")
                     process.arguments = ["-c", "defaults write -g MetalForceHudEnabled -bool YES"]
-                    try? process.run()
+                    do {
+                        try process.run()
+                        process.waitUntilExit()
+                    } catch {
+                        // Optionally log error if needed
+                    }
                 }
             }
         }
