@@ -1,28 +1,26 @@
 import SwiftUI
 import AppKit
+import Foundation
 
 
 struct AboutWindowView: View {
+    @AppStorage("isMetalHUDEnabled") var isMetalHUDEnabled: Bool = false
     @Environment(\.colorScheme) var colorScheme
-    let appVersion = "v1 Prerelease"
-    let buildNumber = "MHU1000"
+    let appVersion = "v1.0"
+    let buildNumber = "MHU1010"
     let developers = "7002"
     let appName = "Metal HUD Utility"
 
     var body: some View {
         ZStack {
-            // Background with a subtle blur effect
             CustomVisualEffectView(material: .hudWindow, blendingMode: .behindWindow)
-                .edgesIgnoringSafeArea(.all)
             
-            // Main content view
             VStack(spacing: 16) {
-                Image("sppico") // Ensure you have an image named "sppico" in your assets
+                Image("mcuico")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80, height: 80)
-                    .padding(.top, 20) // Add padding to the top for spacing
-                
+                    .padding(.top, 20)
                 HStack {
                     Text(appName)
                         .font(.largeTitle)
@@ -46,7 +44,6 @@ struct AboutWindowView: View {
                 }
 
                     
-                // Content with a card-like background
                 VStack(spacing: 12) {
                     HStack {
                         Text("Version:")
@@ -78,7 +75,7 @@ struct AboutWindowView: View {
                             .foregroundColor(Color.gray)
                     }
                 }
-                .padding(16) // Padding inside the card
+                .padding(16)
                 .background(
                     Group {
                         if colorScheme == .light {
@@ -89,11 +86,10 @@ struct AboutWindowView: View {
                     }
                 )
                 .cornerRadius(12)
-                .shadow(radius: 10) // Subtle shadow for depth
-                
-                Spacer() // Adjust if needed to remove extra space
+                .shadow(radius: 10)
+                Spacer()
             }
-            .padding(24) // Refined padding for the overall layout
+            .padding(24)
         }
         .frame(width: 450, height: 350)
     }

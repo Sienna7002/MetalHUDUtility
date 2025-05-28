@@ -9,6 +9,11 @@ struct Metal_HUD_ToggleApp: App {
             ContentView()
                 .onAppear {
                     NSWindow.allowsAutomaticWindowTabbing = false
+                    if let window = NSApplication.shared.windows.first {
+                        window.setContentSize(NSSize(width: 300, height: 300))
+                        window.styleMask.remove([.resizable, .fullScreen])
+                        window.standardWindowButton(.zoomButton)?.isEnabled = false
+                    }
                 }
         }
         .windowStyle(HiddenTitleBarWindowStyle())
@@ -20,6 +25,7 @@ struct Metal_HUD_ToggleApp: App {
                     Text("About Metal HUD Utility")
                 }
             }
+            CommandGroup(replacing: .newItem) { }
             
             
             

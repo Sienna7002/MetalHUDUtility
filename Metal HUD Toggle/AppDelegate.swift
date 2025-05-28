@@ -8,14 +8,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if aboutBoxWindowController == nil {
             let styleMask: NSWindow.StyleMask = [.closable, .miniaturizable, .titled]
             let window = NSWindow(
-                contentRect: NSRect(x: 0, y: 0, width: 330, height: 380), // Initial size
+                contentRect: NSRect(x: 0, y: 0, width: 330, height: 380),
                 styleMask: styleMask,
                 backing: .buffered,
                 defer: false
             )
             window.title = "About Metal HUD Utility"
             window.contentView = NSHostingView(rootView: AboutWindowView())
-            window.center() // Center the window on the screen
+            window.center() 
             aboutBoxWindowController = NSWindowController(window: window)
         }
         

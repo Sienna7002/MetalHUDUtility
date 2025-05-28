@@ -1,11 +1,6 @@
 import SwiftUI
 import MetalKit
-import simd // For SIMD types like float4x4
 
-// MARK: - SwiftUI App Main Entry
-
-
-// MARK: - ContentView
 struct DemoView: View {
     var body: some View {
         MetalViewRepresentable()
@@ -23,7 +18,6 @@ struct DemoView: View {
     }
 }
 
-// MARK: - MetalViewRepresentable (SwiftUI to MTKView Bridge)
 struct MetalViewRepresentable: NSViewRepresentable {
     func makeNSView(context: Context) -> MTKView {
         let mtkView = MTKView()
@@ -32,33 +26,21 @@ struct MetalViewRepresentable: NSViewRepresentable {
             fatalError("Metal is not supported on this device")
         }
         mtkView.device = defaultDevice
-
-        // Create the renderer and assign it as the MTKView's delegate
-        // The context.coordinator will be our Renderer instance
         mtkView.delegate = context.coordinator
-        
-        // Configure MTKView properties
-        mtkView.colorPixelFormat = .bgra8Unorm_srgb // Standard color format
-        mtkView.depthStencilPixelFormat = .depth32Float // For depth testing
-        mtkView.clearColor = MTLClearColor(red: 0.3, green: 0.0, blue: 0.5, alpha: 1.0) // Initial dark purple
-        
-        // For "unlimited" FPS:
-        // isPaused should be false (already set)
-        // enableSetNeedsDisplay should be false so draw(in:) is called continuously.
+        mtkView.colorPixelFormat = .bgra8Unorm_srgb
+        mtkView.depthStencilPixelFormat = .depth32Float
+        mtkView.clearColor = MTLClearColor(red: 0.3, green: 0.0, blue: 0.5, alpha: 1.0)
         mtkView.isPaused = false
         mtkView.enableSetNeedsDisplay = false
-        mtkView.preferredFramesPerSecond = 1000; // Setting to 0 or a very high number can also be used, but enableSetNeedsDisplay = false is more direct for continuous drawing.
+        mtkView.preferredFramesPerSecond = 1000;
 
         return mtkView
     }
 
     func updateNSView(_ nsView: MTKView, context: Context) {
-        // This can be used to update the view with new data from SwiftUI if needed
     }
 
     func makeCoordinator() -> Renderer {
-        // The coordinator is our Renderer class
-        // It's created once and handles Metal drawing logic
         guard let coordinator = Renderer(device: MTLCreateSystemDefaultDevice()!) else {
             fatalError("Failed to create Renderer")
         }
@@ -66,17 +48,15 @@ struct MetalViewRepresentable: NSViewRepresentable {
     }
 }
 
-// MARK: - Vertex Data Structures
 struct CubeVertex {
     var position: SIMD3<Float>
     var texCoord: SIMD2<Float>
 }
 
 struct QuadVertex {
-    var position: SIMD2<Float> // For full-screen quad
+    var position: SIMD2<Float>
 }
 
-// MARK: - Renderer (MTKViewDelegate)
 class Renderer: NSObject, MTKViewDelegate {
     let device: MTLDevice
     let commandQueue: MTLCommandQueue
@@ -88,7 +68,7 @@ class Renderer: NSObject, MTKViewDelegate {
     // Buffers
     var cubeVertexBuffer: MTLBuffer!
     var cubeIndexBuffer: MTLBuffer!
-    var quadVertexBuffer: MTLBuffer! // For the gradient background
+    var quadVertexBuffer: MTLBuffer!
     var quadIndexBuffer: MTLBuffer!
     
     // Texture
@@ -101,11 +81,10 @@ class Renderer: NSObject, MTKViewDelegate {
     var rotationAngle: Float = 0.0
 
     // Depth stencil states
-    var depthStencilState: MTLDepthStencilState!      // For the cube (depth enabled)
-    var noDepthStencilState: MTLDepthStencilState! // For the gradient (depth disabled)
+    var depthStencilState: MTLDepthStencilState!
+    var noDepthStencilState: MTLDepthStencilState!
 
 
-    // Cube vertices with positions and texture coordinates
     static let cubeVertices: [CubeVertex] = [
         // Front face
         CubeVertex(position: SIMD3<Float>(-0.5, -0.5,  0.5), texCoord: SIMD2<Float>(0, 1)),
@@ -176,7 +155,6 @@ class Renderer: NSObject, MTKViewDelegate {
             fatalError("Could not load default Metal library")
         }
 
-        // --- Gradient Pipeline ---
         let gradientVertexFunction = library.makeFunction(name: "gradient_vertex_shader")
         let gradientFragmentFunction = library.makeFunction(name: "gradient_fragment_shader")
 
@@ -248,7 +226,7 @@ class Renderer: NSObject, MTKViewDelegate {
         do {
             cubeTexture = try textureLoader.newTexture(name: "sppico", scaleFactor: 1.0, bundle: nil, options: nil)
         } catch {
-            fatalError("Could not load texture 'sppico'. Make sure it's in Assets.xcassets. Error: \(error)")
+            fatalError("no sppico texture: \(error)")
         }
     }
     
@@ -257,7 +235,7 @@ class Renderer: NSObject, MTKViewDelegate {
         depthDescriptor.depthCompareFunction = .less
         depthDescriptor.isDepthWriteEnabled = true
         guard let cubeDepthState = device.makeDepthStencilState(descriptor: depthDescriptor) else {
-            fatalError("Failed to create depth stencil state for cube")
+            fatalError("cannot crreat 'cube' depth state")
         }
         self.depthStencilState = cubeDepthState
 
@@ -265,7 +243,7 @@ class Renderer: NSObject, MTKViewDelegate {
         noDepthDescriptor.depthCompareFunction = .always
         noDepthDescriptor.isDepthWriteEnabled = false
         guard let gradientDepthState = device.makeDepthStencilState(descriptor: noDepthDescriptor) else {
-            fatalError("Failed to create 'no depth' stencil state for gradient")
+            fatalError("failed to create 'gradient' depth state")
         }
         self.noDepthStencilState = gradientDepthState
     }
@@ -314,7 +292,7 @@ class Renderer: NSObject, MTKViewDelegate {
         renderPassDescriptor.depthAttachment.storeAction = .store
 
         guard let cubeEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else { return }
-        cubeEncoder.label = "Cube Encoder"
+        cubeEncoder.label = "Cube encoder"
         
         cubeEncoder.setDepthStencilState(depthStencilState)
         // Disable culling to see all faces

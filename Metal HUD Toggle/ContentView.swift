@@ -18,6 +18,8 @@ struct ContentView: View {
     @State private var logMessages: [String] = []
     @State private var demoViewID = UUID()
     @State private var showRestartBanner = false
+    @State private var showRestartAlert = false
+    @State private var pendingMetalHUDEnable: Bool? = nil
     
     init() {
         _isMetalHUDEnabled = State(initialValue: checkMetalHUDStatus())
@@ -31,34 +33,31 @@ struct ContentView: View {
         ZStack {
             CustomVisualEffectView(material: .hudWindow, blendingMode: .behindWindow)
                 .edgesIgnoringSafeArea(.all)
-            
-            
+
+            if isMetalHUDEnabled {
+                AnimatedBackgroundView()
+                    .transition(.opacity)
+                    .animation(.easeInOut(duration: 9), value: isMetalHUDEnabled)
+            }
+
             switch currentView {
             case .main:
                 mainView
-                    .transition(.opacity)
+                    .transition(.slide.combined(with: .opacity))
             case .demo:
                 DemoViewContainer(isMetalHUDEnabled: isMetalHUDEnabled, goBack: { withAnimation { currentView = .main } })
-                    .transition(.opacity)
+                    .transition(.slide.combined(with: .opacity))
             }
         }
         .frame(minWidth: 330, minHeight: 380)
-        .animation(.easeInOut(duration: 0.4), value: currentView)
-        .animation(.easeInOut(duration: 0.4), value: showRestartBanner)
+        .animation(.easeInOut(duration: 0.6), value: currentView)
+        .animation(.easeInOut(duration: 0.6), value: showRestartBanner)
     }
     
     var mainView: some View {
         ZStack {
-            ZStack {
-                if isMetalHUDEnabled {
-                    AnimatedBackgroundView()
-                        .transition(.opacity)
-                }
-            }
-            .animation(.easeInOut(duration: 0.5), value: isMetalHUDEnabled)
-
             VStack(spacing: 16) {
-                Image("sppico")
+                Image("mcuico")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80, height: 80)
@@ -66,21 +65,40 @@ struct ContentView: View {
                 Text("Metal HUD Utility")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color.primary)
                 
                 VStack(spacing: 20) {
-                    Toggle("Enable Metal HUD", isOn: $isMetalHUDEnabled)
-                        .toggleStyle(SwitchToggleStyle())
-                        .onChange(of: isMetalHUDEnabled) { newValue in
-                            toggleMetalHUD(enable: newValue)
+                    Toggle("Enable Metal HUD", isOn: Binding(
+                        get: { isMetalHUDEnabled },
+                        set: { newValue in
+                            pendingMetalHUDEnable = newValue
+                            showRestartAlert = true
                         }
-                        .padding()
-                        .frame(width: 250)
-                        .background(Color.white.opacity(0.2))
-                        .cornerRadius(10)
-                        .shadow(radius: 5)
-                        .tint(.pink)
-                        .foregroundColor(.white)
+                    ))
+                    .toggleStyle(SwitchToggleStyle())
+                    .padding()
+                    .frame(width: 250)
+                    .background(Color.white.opacity(0.2))
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+                    .tint(.pink)
+                    .foregroundColor(Color.primary)
+                    .alert(isPresented: $showRestartAlert) {
+                        Alert(
+                            title: Text("Metal HUD Status Change"),
+                            message: Text("You must restart all apps for changes to take effect."),
+                            primaryButton: .default(Text("OK")) {
+                                if let newValue = pendingMetalHUDEnable {
+                                    isMetalHUDEnabled = newValue
+                                    toggleMetalHUD(enable: newValue)
+                                }
+                                pendingMetalHUDEnable = nil
+                            },
+                            secondaryButton: .cancel {
+                                pendingMetalHUDEnable = nil
+                            }
+                        )
+                    }
                     
                     Button(action: {
                         UserDefaults.standard.set(true, forKey: "launchIntoTest")
@@ -198,10 +216,6 @@ struct ContentView: View {
         
         var body: some View {
             ZStack {
-                if isMetalHUDEnabled {
-                    AnimatedBackgroundView()
-                        .transition(.opacity)
-                }
                 VStack {
                     ZStack {
                         Text("Test Metal HUD")
@@ -246,7 +260,7 @@ struct ContentView: View {
                         try process.run()
                         process.waitUntilExit()
                     } catch {
-                        // Optionally log error if needed
+
                     }
                 }
             }
