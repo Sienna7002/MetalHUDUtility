@@ -1,6 +1,6 @@
 # <img width="64" alt="Icon-macOS-512x512@2x png" src="https://github.com/user-attachments/assets/6fab6108-3614-4073-b9cd-3f3305aac47d" /> <br> Metal HUD Utility
 
-**Metal HUD Utility** is a simple Swift application that allows you to easily enable and disable Apple's Metal HUD which ships with macOS.
+**Metal HUD Utility** is a simple Swift application that allows you to permanently and easily enable and disable Apple's Metal HUD which ships with macOS.
 
 Downloads in Release, or click [here](#building) for building information
 
