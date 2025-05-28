@@ -4,12 +4,10 @@ import AppKit
 
 struct AboutWindowView: View {
     @Environment(\.colorScheme) var colorScheme
-    let appVersion = "v0.5 Alpha"
-    let buildNumber = "SPP0203"
+    let appVersion = "v1 Prerelease"
+    let buildNumber = "MHU1000"
     let developers = "7002"
-    let appName = "Specifier Pro"
-    let appTag = "ALPHA"
-    let disclosureText = "This alpha software is intended to be used for beta testing purposes only, if you are given this software without the written consent of 7002 or recieved this build through a source not endorsed or operated by 7002, destroy this copy immediately."
+    let appName = "Metal HUD Utility"
 
     var body: some View {
         ZStack {
@@ -25,27 +23,27 @@ struct AboutWindowView: View {
                     .frame(width: 80, height: 80)
                     .padding(.top, 20) // Add padding to the top for spacing
                 
-                HStack(spacing: 5) {
+                HStack {
                     Text(appName)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(colorScheme == .light ? .black : .white)
-                    
-                    Text(appTag)
-                        .font(.caption)
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
-                        .padding(.vertical, 4)
-                        .padding(.horizontal, 8)
-                        .background(Color.yellow)
-                        .clipShape(Capsule())
                 }
                 
-                Text(disclosureText)
+                Text("This is open-source software. You may find the source code below.")
                     .font(.system(size: 10))
                     .foregroundColor(colorScheme == .light ? .black : .white)
-                    .fixedSize(horizontal: false, vertical: true)
                     .multilineTextAlignment(.center)
+
+                Link(destination: URL(string: "https://github.com/Sienna7002/Metal-HUD-Toggle")!) {
+                    Text("View on GitHub")
+                        .font(.system(size: 10, weight: .semibold))
+                        .foregroundColor(.white)
+                        .padding(.vertical, 6)
+                        .padding(.horizontal, 12)
+                        .background(Color.pink)
+                        .cornerRadius(8)
+                }
 
                     
                 // Content with a card-like background
@@ -131,4 +129,3 @@ struct AboutWindowView_Previews: PreviewProvider {
         }
     }
 }
-

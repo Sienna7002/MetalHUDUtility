@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
     enum CurrentView {
         case main
@@ -22,6 +21,10 @@ struct ContentView: View {
     
     init() {
         _isMetalHUDEnabled = State(initialValue: checkMetalHUDStatus())
+        if UserDefaults.standard.bool(forKey: "launchIntoTest") {
+            _currentView = State(initialValue: .demo)
+            UserDefaults.standard.removeObject(forKey: "launchIntoTest")
+        }
     }
     
     var body: some View {
@@ -39,6 +42,7 @@ struct ContentView: View {
                     .transition(.opacity)
             }
         }
+        .frame(minWidth: 330, minHeight: 380)
         .animation(.easeInOut(duration: 0.4), value: currentView)
         .animation(.easeInOut(duration: 0.4), value: showRestartBanner)
     }
@@ -79,10 +83,12 @@ struct ContentView: View {
                         .foregroundColor(.white)
                     
                     Button(action: {
-                        withAnimation {
-                            demoViewID = UUID()
-                            currentView = .demo
-                        }
+                        UserDefaults.standard.set(true, forKey: "launchIntoTest")
+                        let task = Process()
+                        task.executableURL = URL(fileURLWithPath: "/usr/bin/open")
+                        task.arguments = ["-n", Bundle.main.bundlePath]
+                        try? task.run()
+                        exit(0)
                     }) {
                         Text("Test Metal HUD")
                             .font(.headline)
@@ -96,6 +102,7 @@ struct ContentView: View {
                     .buttonStyle(PlainButtonStyle())
                     .disabled(!isMetalHUDEnabled)
                     .opacity(isMetalHUDEnabled ? 1.0 : 0.5)
+
                 }
                 .padding()
                 .background(
@@ -107,7 +114,6 @@ struct ContentView: View {
         }
         .onAppear {
             if isMetalHUDEnabled {
-                // Trigger any side animations here if needed
             }
         }
     }
@@ -197,32 +203,29 @@ struct ContentView: View {
                         .transition(.opacity)
                 }
                 VStack {
-                    HStack {
-                        
-                        Button(action: {
-                            withAnimation {
-                                goBack()
-                            }
-                        }) {
-                            HStack {
-                                Image(systemName: "chevron.left")
-                                Text("Back")
-                                
-                            }
-                            .font(.headline)
-                            .padding(.all, 12)
-                            .cornerRadius(8)
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        Spacer()
+                    ZStack {
+                        Text("Test Metal HUD")
+                            .multilineTextAlignment(.center)
+
                         HStack {
-                            Text("Restart MetalHUD Utility if MetalHUD is not visible when it should be.")
+                            Button(action: {
+                                withAnimation {
+                                    goBack()
+                                }
+                            }) {
+                                HStack {
+                                    Image(systemName: "chevron.left")
+                                    Text("Back")
+                                }
+                                .font(.headline)
                                 .padding(.all, 12)
-                                .multilineTextAlignment(.center)
+                                .cornerRadius(8)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            Spacer()
                         }
                     }
                     DemoView()
-                        .id(UUID())
                         .background(
                             CustomVisualEffectView(material: .windowBackground, blendingMode: .withinWindow)
                                 .cornerRadius(20)

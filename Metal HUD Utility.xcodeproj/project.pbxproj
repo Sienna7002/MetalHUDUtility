@@ -192,7 +192,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					C0382EE12D85A2C700544C9E = {
 						CreatedOnToolsVersion = 16.2;
@@ -417,6 +417,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Metal HUD Toggle/Preview Content\"";
 				DEVELOPMENT_TEAM = TCBWS4X9DH;
 				ENABLE_PREVIEWS = YES;
@@ -453,6 +454,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Metal HUD Toggle/Preview Content\"";
 				DEVELOPMENT_TEAM = TCBWS4X9DH;
 				ENABLE_PREVIEWS = YES;

@@ -3,14 +3,7 @@ import MetalKit
 import simd // For SIMD types like float4x4
 
 // MARK: - SwiftUI App Main Entry
-struct MetalCubeApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .frame(minWidth: 800, minHeight: 600)
-        }
-    }
-}
+
 
 // MARK: - ContentView
 struct DemoView: View {
